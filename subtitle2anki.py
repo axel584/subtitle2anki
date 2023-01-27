@@ -6,9 +6,9 @@ import glob
 
 TARGET_LANG = "it"
 NATIVE_LANG = "fr"
-SRT_FILE = "Il_Principe_dei_draghi_S01E04.srt"
-ANKI_FILE_DST = "Il_Principe_dei_draghi_S01E04.apkg"
-CSV_FILE = "Il_Principe_dei_draghi_S01E04.csv"
+SRT_FILE = "Il_Principe_dei_draghi_S01E03.srt"
+ANKI_FILE_DST = "Il_Principe_dei_draghi_S01E03.apkg"
+CSV_FILE = "Il_Principe_dei_draghi_S01E03.csv"
 WORD_ALREADY_LEARNED = "word_already_learned.txt"
 
 
@@ -48,12 +48,12 @@ BASIC_WITH_SAMPLE_MODEL = Model(
 class Sentence:
 
     def __init__(self,sentence):
-        self.sentence=sentence
+        self.sentence=sentence.replace('"','')
         self.translation=None
 
 class Word:
     def __init__(self,word:str,sentence:str):
-        self.word = word
+        self.word = word.replace('"','')
         self.translation = None
         self.occur=1
         self.sentence = Sentence(sentence)
